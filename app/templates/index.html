@@ -1,36 +1,14 @@
-{% extends 'base.html'  %}
-{% import 'bootstrap/wtf.html' as wtf%}
-{% block styles%}
-{{ super() }}
-<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
-{% endblock%}
-{% block content %}
-<body>
-   <h1>WELCOME TO WOMEN IN TECH</h1>
-   <div class="container">
-       <div class="row">
-           {% for posts in all_posts %}
-           <div class="col-md-12">
-               <div class="card" style="width: 18rem;">
-                   <div class="card-body">
-                       <h5 class="card-title">
-                           {{posts.title}}</h5>
-                       <p class="card-text">
-                           {{posts.blog}}</p>
-                       
-                   </div>
-               </div>
-                         <div>
-            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('main.update_post', blog_id=blogs.id) }}">Update</a>
-            <button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
-          </div>
-     
-      </div>
-           </div>
-       </div>
-   </div>
-   </div>
-   {% endfor%}
-</body>
-{% endblock %}
+{% extends 'base.html' %}
 
+{% block content %}
+{% block style %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Tangerine&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC|Racing+Sans+One&display=swap" rel="stylesheet">
+{% endblock %}
+<div class="big" style="text-align:center">
+    <h1><img src="https://de13-engine.flamingtext.com/netfu/tmp28003/coollogo_com-284671590.gif"></h1>
+    <!-- <img src="../static/assets/gp1.png"> -->
+</div>
+{% endblock %}
