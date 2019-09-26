@@ -1,1 +1,36 @@
-<h1>hee</h1>
+{% extends 'base.html'  %}
+{% import 'bootstrap/wtf.html' as wtf%}
+{% block styles%}
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock%}
+{% block content %}
+<body>
+   <h1>WELCOME TO WOMEN IN TECH</h1>
+   <div class="container">
+       <div class="row">
+           {% for posts in all_posts %}
+           <div class="col-md-12">
+               <div class="card" style="width: 18rem;">
+                   <div class="card-body">
+                       <h5 class="card-title">
+                           {{posts.title}}</h5>
+                       <p class="card-text">
+                           {{posts.blog}}</p>
+                       
+                   </div>
+               </div>
+                         <div>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('main.update_post', blog_id=blogs.id) }}">Update</a>
+            <button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
+          </div>
+     
+      </div>
+           </div>
+       </div>
+   </div>
+   </div>
+   {% endfor%}
+</body>
+{% endblock %}
+

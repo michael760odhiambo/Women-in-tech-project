@@ -43,7 +43,7 @@ class Post(db.Model):
     title = db.Column(db.String(255))
     blog = db.Column(db.String(255))
     users = db.relationship('User', backref='post', lazy='dynamic')
-    #comments = db.relationship('Comment', backref='article', lazy=True)
+    
 
     def __repr__(self):
         return f"Post{self.blog}"

@@ -7,9 +7,11 @@ from .. import db,photos
 
 @main.route('/')
 def home():
-    #all_posts = Post.query.all()
-    #print(all_posts)
-    return render_template('base.html')
+   all_posts = Post.query.all()
+   print(all_posts)
+   
+   return render_template('index.html',all_posts=all_posts)
+   #return redirect(url_for('main.home'))
 
 @main.route('/user/<uname>')
 @login_required
@@ -54,8 +56,8 @@ def post_pitch():
         title = form.title.data
         blog = form.blog.data
         #category = form.category.data
-        post = Post.query.filter_by(title = title ).first()
-        if post == None:
+        blog = Post.query.filter_by(title = title ).first()
+        if blog == None:
             new_post = Post(title = title , blog = blog,  )
             db.session.add(new_post)
             db.session.commit()
@@ -76,3 +78,13 @@ def update_pic(uname):
         #user_photo = PhotoProfile(pic_path = path,user = user)
         db.session.commit()
     return redirect(url_for('main.profile',uname=uname,id_user=current_user.id))
+
+@main.route("/post/<int:post_id>/delete", methods=['POST'])
+@login_required
+def delete_post(post_id):
+    blog = Post.query.get_or_404(post_id)
+ 
+    db.session.delete(blog)
+    db.session.commit()
+    flash('Your post has been deleted!', 'success')
+    return redirect(url_for('main.view_page')) 
