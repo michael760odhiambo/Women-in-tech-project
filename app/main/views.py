@@ -73,7 +73,7 @@ def post_pitch():
             db.session.add(new_post)
             db.session.commit()
 
-    return render_template('posts.html',form =form)    
+    return render_template('postblog.html',form =form)    
 
 @main.route('/user/<uname>/update/pic',methods= ['POST'])
 @login_required
