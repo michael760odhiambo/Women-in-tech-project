@@ -31,6 +31,7 @@ deactivate nondestructive
 
 set -gx VIRTUAL_ENV "/home/moringa/Documents/moringa-school-projects/Women-in-tech-project/virtual"
 
+
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
 

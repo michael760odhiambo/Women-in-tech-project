@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, TextAreaField, SubmitField,SelectField
-from wtforms.validators import Required
+from wtforms.validators import Required,InputRequired
 
 
 class PostForm(FlaskForm):
@@ -14,3 +14,7 @@ class PostForm(FlaskForm):
 class UpdateProfile(FlaskForm):
     bio = TextAreaField('Tell us about you.',validators = [Required()])
     submit = SubmitField('Submit','info')
+
+class AddCommentForm(FlaskForm):
+    body = StringField("Body", validators=[InputRequired()])
+    submit = SubmitField("Post")    

@@ -2,6 +2,11 @@ from . import db
 from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import UserMixin
 from . import login_manager
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
+
 class PhotoProfile(db.Model):
     __tablename__ = 'profile_photos'
 
@@ -15,7 +20,7 @@ class User(db.Model,UserMixin):
     id = db.Column(db.Integer,primary_key=True)
     username = db.Column(db.String(255),index=True)
     email = db.Column(db.String(255),index=True,unique=True)
-    post_id = db.Column(db.Integer,db.ForeignKey('posts.id'))
+    blog_id = db.Column(db.Integer,db.ForeignKey('posts.id'))
     bio = db.Column(db.String(255))
     profile_pic_path = db.Column(db.String())
     pass_secure = db.Column(db.String(255))
@@ -43,11 +48,17 @@ class Post(db.Model):
     title = db.Column(db.String(255))
     blog = db.Column(db.String(255))
     users = db.relationship('User', backref='post', lazy='dynamic')
-    
+   # comments = db.relationship('Comment', backref='article', lazy=True)
 
     def __repr__(self):
         return f"Post{self.blog}"
 
-@login_manager.user_loader
-def load_user(user_id):
-    return User.query.get(int(user_id))
+class Comment(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    body = db.Column(db.String(100), nullable=False)
+   # timestamp = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    blog_id = db.Column(db.Integer,db.ForeignKey('posts.id'))
+
+    def __repr__(self):
+        return f"Comment('{self.body}')" 
+
