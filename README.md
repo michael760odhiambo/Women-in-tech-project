@@ -6,4 +6,9 @@
 * Michael Maina
 * Maxwel Wafula
 
-## 
+## Technologies Used
+* Flask
+* Python
+* CSS
+* HTML
+
