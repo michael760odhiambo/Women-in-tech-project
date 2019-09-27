@@ -7,7 +7,7 @@ This project came forth as a result of lack of determination in women technology
 * Michael Odhiambo
 * Lilbeth Langat
 * Michael Maina
-* Maxwel Wafula -->
+* Maxwel Wafula 
 
 ## Technologies Used
 * Flask
