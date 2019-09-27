@@ -8,12 +8,12 @@ This project came forth as a result of lack of determination in women technology
 * Lilbeth Langat
 * Michael Maina
 * Maxwel Wafula 
-
+<!-- 
 ## Technologies Used
 * Flask
 * Python
 * CSS
-* HTML
+* HTML -->
 
 ## Setup/Installation Instruction
 * steps to follow
