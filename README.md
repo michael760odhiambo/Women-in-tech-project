@@ -1,4 +1,4 @@
-# WOMEN IN TECH
+<!-- # WOMEN IN TECH
 
 ## Description
 This project came forth as a result of lack of determination in women technology. The world being revolutionalised every minute, the application is all about impacting women to stand out and add value in technology without fear.
@@ -7,7 +7,7 @@ This project came forth as a result of lack of determination in women technology
 * Michael Odhiambo
 * Lilbeth Langat
 * Michael Maina
-* Maxwel Wafula
+* Maxwel Wafula -->
 
 ## Technologies Used
 * Flask
