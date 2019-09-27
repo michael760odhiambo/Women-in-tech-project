@@ -5,7 +5,7 @@ This project came forth as a result of lack of determination in women technology
 
 ## Contributors:
 * Michael Odhiambo
-* Lilbeth Kipng'etic
+* Lilbeth Langat
 * Michael Maina
 * Maxwel Wafula
 
