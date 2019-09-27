@@ -27,7 +27,7 @@ class TestConfig(Config):
     pass
 
 class DevConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:mike1234@localhost/tech'
+    #SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://lilibeth:1234@localhost/tech'
     DEBUG = True
 
 config_options ={"production":ProdConfig,"default":DevConfig,"testing":TestConfig}
