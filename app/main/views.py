@@ -20,7 +20,7 @@ def view_blog():
    all_blogs = Post.query.all()
    comments = Comment.query.all()
    print(all_blogs)
-   return render_template('posts.html',all_blogs=all_blogs,comments = comments)
+   return render_template('postblog.html',all_blogs=all_blogs,comments = comments)
    
 
 
