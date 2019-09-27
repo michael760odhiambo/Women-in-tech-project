@@ -11,22 +11,20 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home
+          <a class="nav-link" href="{{url_for('main.home')}}">Home
             <span class="sr-only">(current)</span>
           </a>
-        </li>
+
         <li class="nav-item">
           <a class="nav-link" href="{{url_for('main.post_pitch')}}">Post A blog</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Videos</a>
+          <a class="nav-link" href="{{url_for('main.motive')}}">Videos</a>
         </li>
+ 
         <li class="nav-item">
-          <a class="nav-link" href="#">Events</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Charts</a>
-        </li>
+            <a class="nav-link" href="{{url_for('main.view_blog')}}">View</a>
+          </li>
       </ul>
       <ul class="navbar-nav ml-auto nav-flex-icons">
         <li class="nav-item dropdown">
@@ -36,9 +34,7 @@
           <div class="dropdown-menu dropdown-secondary" aria-labelledby="navbarDropdownMenuLink-555">
             <a class="dropdown-item" href="{{url_for('auth.register')}}" style="font-size: 40px">Sign Up</a>
             <a class="dropdown-item" href="{{url_for('auth.login')}}" style="font-size: 40px">Login</a>
-            <a class="dropdown-item" href="{{url_for('auth.logout')}}">Log Out</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="{{url_for('main.post_pitch')}}">View other peoples posts</a>
+            <a class="dropdown-item" href="{{url_for('auth.logout')}}" style="font-size: 40px">Log Out</a>
           </div>
         </li>
         <li class="nav-item avatar">
