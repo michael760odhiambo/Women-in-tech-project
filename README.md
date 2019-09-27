@@ -13,7 +13,7 @@ This project came forth as a result of lack of determination in women technology
 * Flask
 * Python
 * CSS
-* HTML -->
+* HTML 
 
 ## Setup/Installation Instruction
 * steps to follow
